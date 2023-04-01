@@ -52,8 +52,9 @@ class PostController extends Controller
         ]);
     }
 
-    public function show()
+    public function show($id)
     {
+//        dd($id);
         $post = [
             'id' => 3,
             'title' => 'Javascript',
@@ -63,5 +64,10 @@ class PostController extends Controller
         ];
 
         return view('posts.show', ['post' => $post]);
+    }
+
+    public function create()
+    {
+        return view('posts.create');
     }
 }
