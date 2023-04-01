@@ -18,5 +18,11 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function () {
-    return view('test');
+    $books = ['b1', 'b2'];
+
+    return view('test', [
+            'books' => $books,
+            'name' => 'Ahmed'
+        ]
+    );
 });
