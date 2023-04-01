@@ -51,4 +51,17 @@ class PostController extends Controller
             'posts' => $allPosts,
         ]);
     }
+
+    public function show()
+    {
+        $post = [
+            'id' => 3,
+            'title' => 'Javascript',
+            'description' => 'hello javascript',
+            'posted_by' => 'Mohamed',
+            'created_at' => '2023-04-01 10:00:00',
+        ];
+
+        return view('posts.show', ['post' => $post]);
+    }
 }
