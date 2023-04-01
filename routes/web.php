@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    $books = ['b1', 'b2'];
+Route::get('/test', [PostController::class, 'test']);
 
-    return view('test', [
-            'books' => $books,
-            'name' => 'Ahmed'
-        ]
-    );
-});
+//Finish The page UI
+//1- route to show the page that lists the posts
+//2- view to render the html
+//3- Controller to render the view
+
+Route::get('/posts', [PostController::class, 'index']);
