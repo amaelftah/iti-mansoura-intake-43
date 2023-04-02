@@ -84,3 +84,6 @@ class PostController extends Controller
         dd($request->all());
     }
 }
+
+//1- Schema Structure Change ... (Create table, Edit table, Delete table).... database migrations
+//2- CRUD Operations ... (Insert row, edit row , delete row)
