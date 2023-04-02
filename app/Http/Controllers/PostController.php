@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -44,7 +45,11 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+        $users = User::all();
+
+        return view('posts.create',[
+            'users' => $users
+        ]);
     }
 
     public function store(Request $request)
@@ -60,6 +65,7 @@ class PostController extends Controller
         Post::create([
             'title' => $data['title'],
             'description' => $data['description'],
+            'user_id' => $data['post_creator'],
 
         ]); //insert into posts (title,description)
 
