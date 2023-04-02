@@ -70,4 +70,17 @@ class PostController extends Controller
     {
         return view('posts.create');
     }
+
+    public function store(Request $request)
+    {
+//        $data = request()->all();
+//
+//        $title = request()->title;
+//        $description = request()->description;
+//        $postCreator = request()->post_creator;
+
+        $data = $request->all();
+
+        dd($request->all());
+    }
 }
