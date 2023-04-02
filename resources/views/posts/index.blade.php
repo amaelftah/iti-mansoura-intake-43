@@ -20,12 +20,12 @@
 
         @foreach($posts as $post)
             <tr>
-                <td>{{$post['id']}}</td>
-                <td>{{$post['title']}}</td>
-                <td>{{$post['posted_by']}}</td>
-                <td>{{$post['created_at']}}</td>
+                <td>{{$post->id}}</td>
+                <td>{{$post->title}}</td>
+                <td>{{$post->posted_by}}</td>
+                <td>{{$post->created_at}}</td>
                 <td>
-                    <a href="/posts/{{$post['id']}}" class="btn btn-info">View</a>
+                    <a href="/posts/{{$post->id}}" class="btn btn-info">View</a>
                     <a href="#" class="btn btn-primary">Edit</a>
                     <a href="#" class="btn btn-danger">Delete</a>
                 </td>
