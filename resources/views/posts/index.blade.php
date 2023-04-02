@@ -19,10 +19,18 @@
         <tbody>
 
         @foreach($posts as $post)
+
+{{--            @dd($post->user->name, $post->postedBy)--}}
             <tr>
                 <td>{{$post->id}}</td>
                 <td>{{$post->title}}</td>
-                <td>{{$post->posted_by}}</td>
+                @if($post->user)
+
+                    <td>{{$post->user->name}}</td>
+                @else
+                    <td>Not Found</td>
+                @endif
+
                 <td>{{$post->created_at}}</td>
                 <td>
                     <a href="/posts/{{$post->id}}" class="btn btn-info">View</a>
