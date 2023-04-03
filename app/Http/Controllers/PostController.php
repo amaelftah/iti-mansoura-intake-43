@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\StorePostRequest;
 
 class PostController extends Controller
 {
@@ -52,16 +53,16 @@ class PostController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
         //validate on the data
-        $request->validate([
-            'title' => ['required', 'min:3'],
-            'description' => ['required', 'min:5'],
-        ],[
-            'title.required' => 'my custom message',
-            'title.min' => 'my custom message for min rule',
-        ]);
+//        $request->validate([
+//            'title' => ['required', 'min:3'],
+//            'description' => ['required', 'min:5'],
+//        ],[
+//            'title.required' => 'my custom message',
+//            'title.min' => 'my custom message for min rule',
+//        ]);
 
 //        $data = request()->all();
 //
